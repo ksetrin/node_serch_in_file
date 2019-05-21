@@ -1,12 +1,9 @@
-//node index.js records.txt queries.txt
-
 const argv = process.argv.slice(2)
 if (argv.length < 2) return console.log('not enough arguments')
 
 const utils = require('./utils');
-const readFile = require('./readFile');
-const records = readFile.getArrayFromFile(argv[0])
-const queries = readFile.getArrayFromFile(argv[1])
+const records = utils.getArrayFromFile(argv[0])
+const queries = utils.getArrayFromFile(argv[1])
 const queriesCopy = [...queries]
 const results = {}
 
